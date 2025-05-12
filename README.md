@@ -29,7 +29,7 @@ Unlike generic study apps, StudySync is built with the student community in mind
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/studysync.git
+git clone https://github.com/amrita150/StudySync.git
 
 # Navigate into the project
 cd studysync
