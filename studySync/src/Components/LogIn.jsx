@@ -2,7 +2,7 @@ import {useState} from 'react';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
-const LogIn = () => {
+const LogIn = ({setIsLogIn}) => {
   const[email, setEmail] = useState("");
   const[password, setPassword] = useState("");
   const[showPassword, setShowPassword] = useState(false);
@@ -11,12 +11,14 @@ const LogIn = () => {
 
   const handleSubmit= (e) => {
       e.preventDefault();
+      //email validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
           setEmailError("Invalid email address");
         } else{
           setEmailError("");
       } 
+      //password validation
      if (!password.trim()) {
         setPasswordError("Password is required");
         return;
@@ -26,15 +28,15 @@ const LogIn = () => {
         setPasswordError("Password must be at least 6 characters");
         return;
       }
-      
       setPasswordError("");
     console.log("email is : " , email);
     console.log("password is : ", password);
   }
 
   return (
-    <div className="min-h-screen flex justify-center items-center px-4">
-      <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl shadow-2xl p-8 max-w-md w-full text-white">
+    <>
+    {/* <div className="flex justify-center items-center px-4 py-12"> */}
+      {/* <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl shadow-2xl p-8 max-w-md w-full text-white"> */}
         <h1 className="text-2xl font-semibold text-center mb-6">Log In</h1>
         <form className="w-full space-y-4" onSubmit={handleSubmit} >
           <input
@@ -80,10 +82,11 @@ const LogIn = () => {
         {/* Sign Up */}
         <p className="text-center mt-2 text-sm text-white/80">
           Don’t have an account?{' '}
-          <span className="underline cursor-pointer">Sign Up</span>
+          <span className="underline cursor-pointer" onClick={() => setIsLogIn(false)}>Sign Up</span>
         </p>
-      </div>
-    </div>
+      {/* </div> */}
+    {/* </div> */}
+    </>
   );
 };
 

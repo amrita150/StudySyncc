@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
-const SignUp = () =>{
+const SignUp = ({setIsLogIn}) =>{
     const[username, setUsername] = useState("");
     const[email, setEmail] =  useState("");
     const[password, setPassword] = useState("");
@@ -63,8 +63,9 @@ const SignUp = () =>{
     }
 
     return (
-    <div className="min-h-screen flex justify-center items-center px-4">
-      <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl shadow-2xl p-8 max-w-md w-full text-white">
+      <>
+    {/* // <div className="flex justify-center items-center px-4 py-12"> */}
+      {/* // <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl shadow-2xl p-8 max-w-md w-full text-white"> */}
         <h1 className="text-2xl font-semibold text-center mb-6">Sign Up</h1>
 
         <form className="w-full space-y-4" onSubmit={handleSubmit}>
@@ -135,10 +136,11 @@ const SignUp = () =>{
 
         <p className="text-center mt-2 text-sm text-white/80">
           Already have an account{' '}
-          <span className="underline cursor-pointer">Log In</span>
+          <span className="underline cursor-pointer" onClick={() => {setIsLogIn(true)}}>Log In</span>
         </p>
-      </div>
-    </div>
+      {/* // </div/> */}
+    {/* // </div> */}
+    </>
   );
 };
 
