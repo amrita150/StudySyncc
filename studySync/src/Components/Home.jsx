@@ -1,11 +1,12 @@
 import HeroSection from './HeroSection';
 import NavBar from './NavBar';
 import FeatureSection from './FeatureSection';
+import NotesHub from './Notes/NotesHub';
+import UploadForm from "./UploadForm";
 
 const Home = () => {
     return (
        <div>
-        <NavBar/>
         <HeroSection/>
         <FeatureSection/>
        </div>

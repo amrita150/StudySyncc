@@ -34,7 +34,7 @@ const SignUp = ({setIsLogIn}) =>{
       }
 
       //for password validation
-      if(password < 8){
+      if(password.length < 8){
         showPasswordError("Min 8 characters required")
       } else if(!/[A-Z]/.test(password)){
         showPasswordError("Password must contain at least one uppercase letter")
@@ -64,11 +64,9 @@ const SignUp = ({setIsLogIn}) =>{
 
     return (
       <>
-    {/* // <div className="flex justify-center items-center px-4 py-12"> */}
-      {/* // <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl shadow-2xl p-8 max-w-md w-full text-white"> */}
         <h1 className="text-2xl font-semibold text-center mb-6">Sign Up</h1>
 
-        <form className="w-full space-y-4" onSubmit={handleSubmit}>
+        <form className="w-full space-y-3" onSubmit={handleSubmit}>
 
           <input
             type="text"
@@ -138,8 +136,6 @@ const SignUp = ({setIsLogIn}) =>{
           Already have an account{' '}
           <span className="underline cursor-pointer" onClick={() => {setIsLogIn(true)}}>Log In</span>
         </p>
-      {/* // </div/> */}
-    {/* // </div> */}
     </>
   );
 };
