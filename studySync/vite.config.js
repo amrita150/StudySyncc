@@ -6,3 +6,4 @@ export default defineConfig({
   base: "/", // ✅ Add this line
   plugins: [react(), tailwindcss()],
 })
+//thi is omment
