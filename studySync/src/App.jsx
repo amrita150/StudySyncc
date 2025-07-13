@@ -16,6 +16,7 @@ const App = () => {
           <Route path="/notes" element={<NotesHub />} />
           <Route path="/ai-doubt" element={<AIDoubtAssistant />} />
         </Routes>
+        <Home></Home>
       </div>
 
   );

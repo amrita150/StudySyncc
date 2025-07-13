@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  base: "/", // ✅ Add this line
+  base: "/StudySyncc/", // 🔥 this is critical!
   plugins: [react(), tailwindcss()],
-})
-//thi is omment
+});
